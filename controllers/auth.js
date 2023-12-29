@@ -1,4 +1,5 @@
 const User = require('../models/User')
+const bcryptjs = require('bcryptjs')
 exports.getSignUp = (req,res,nxt)=>{
     res.render('auth/signup', {
         title : 'signUp',
@@ -8,7 +9,8 @@ exports.getSignUp = (req,res,nxt)=>{
 exports.postSignUP = async (req,res,nxt)=>{
     const name = req.body.name
     const email = req.body.email
-    const password = req.body.password
+    const passwordStr = req.body.password
+    const password = await bcryptjs.hash(passwordStr,8)
     let user = await User.findOne({email})
     if(user){
         console.log('email used');
