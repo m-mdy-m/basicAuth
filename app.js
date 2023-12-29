@@ -26,7 +26,7 @@ app.use(
 app.use((req,res,nxt)=>{
     res.locals.isAuth = req.session.isLog
     nxt()
-})e
+})
 const shopRoute = require("./routes/shop");
 const adminRoute = require("./routes/admin");
 const authRoute = require("./routes/auth");
