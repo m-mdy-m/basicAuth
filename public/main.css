@@ -44,4 +44,5 @@ form > * {
     height: 40px;
     background-color: #6554AF;
     font-size: 16px;
+    cursor: pointer;
 }
