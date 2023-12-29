@@ -51,7 +51,7 @@ exports.postLogin = async (req, res, nxt) => {
   return res.redirect("/");
 };
 exports.postLogOut = async (req, res, nxt) => {
-  await res.session.destroy();
+  await req.session.destroy();
   console.log("delete session");
   return res.redirect("/");
 };
