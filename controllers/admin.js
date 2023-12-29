@@ -51,11 +51,10 @@ exports.postEdit = async (req,res,nxt)=>{
     const id = req.params.prodId
     const title = req.body.title
     const price = req.body.price
-    console.log(id);
-    console.log(title);
-    console.log(price);
-    await Product.findByIdAndUpdate(id ,{
+    const upP =     await Product.findByIdAndUpdate(id ,{
         title,
         price
-    })
+    }) 
+    console.log('updateProduct')
+    return res.redirect('/')
 }
