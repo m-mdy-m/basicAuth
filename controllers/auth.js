@@ -20,5 +20,6 @@ exports.postSignUP = async (req,res,nxt)=>{
         password
     })
     await user.save()
+    console.log('create user');
     res.redirect('/')
 }
