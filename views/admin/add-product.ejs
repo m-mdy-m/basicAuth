@@ -16,7 +16,7 @@
             <div class="button-product wrapper_inputsBtn">
                 <button type="submit" ><% if(editing) {%> UPDATE <%}else {%> ADD-PRODUCT <%} %></button>
             </div>
-            <input type="hidden" name="_csrf" value="<%= csrfToken %>">
+            <input type="hidden" name="csurf" value="<%= csurfToken %>">
         </form>
     </div>
 </main>
