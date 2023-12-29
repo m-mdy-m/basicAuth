@@ -1,0 +1,27 @@
+<%- include('../includes/base.ejs') %>
+</head>
+<%- include('../includes/header.ejs') %>
+
+<main class="main">
+    <div class="wrapper">
+        <form action="/signup" method="POST">
+            <div class="name-product wrapper_inputsBtn">
+                <label for="name">name</label>
+                <input type="text" name="name"">
+            </div>
+            <div class="wrapper_inputsBtn">
+                <label for="email">email</label>
+                <input type="email" name="email" ">
+            </div>
+            <div class="wrapper_inputsBtn">
+                <label for="password">password</label>
+                <input type="number" name="password"">
+            </div>
+            <div class="button-product wrapper_inputsBtn">
+                <button type="submit" ><% if(editing) {%> UPDATE <%}else {%> ADD-PRODUCT <%} %></button>
+            </div>
+        </form>
+    </div>
+</main>
+<%- include('../includes/end.ejs') %>
+    
