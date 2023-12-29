@@ -1,0 +1,24 @@
+<%- include('../includes/base.ejs') %>
+<link rel="stylesheet" href="/home.css">
+</head>
+<%- include('../includes/header.ejs') %>
+
+<main class="main">
+    <div class="wrapper">
+        <form action="<% if(editing) {%> /edit-product <%}else{ %> /add-product <% } %>">
+            <div class="title-product">
+                <label for="title">TITLE</label>
+                <input type="text" name="title" value="<% if (editing){%> <% product.title %> <% } %>">
+            </div>
+            <div class="price-product">
+                <label for="price">PRICE</label>
+                <input type="number" name="price" value="<% if (editing){%> <% product.price %> <% } %>">
+            </div>
+            <div class="button-product">
+                <button type="submit" ><% if(editing) {%> UPDATE <%}else {%> ADD-PRODUCT <%} %></button>
+            </div>
+        </form>
+    </div>
+</main>
+<%- include('../includes/end.ejs') %>
+    
