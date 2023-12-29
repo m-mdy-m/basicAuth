@@ -8,7 +8,12 @@
             <div class="card">
                 <h1 class="card-title card-product"> <%= product.title  %> </h1>
                 <h2 class="card-pric card-product"> <%=  product.price %> </h2>
-
+                <div>
+                    <a href="/edit-product/:prodId" class="btn">EDIT</a>
+                    <form action="/add-product/:prodId">
+                        <button type="submit" class="btn">DELETE</button>
+                    </form>
+                </div>
             </div>
         <% }) %>
     <% }else{ %>

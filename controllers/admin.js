@@ -9,8 +9,6 @@ exports.getAddProduct = (req, res, nxt) => {
 exports.postProduct = async (req, res, nxt) => {
   const title = req.body.title;
   const price = req.body.price;
-  console.log("title =>", title);
-  console.log("price =>", price);
   const newP = await Product.create({
     title,
     price,
@@ -19,3 +17,11 @@ exports.postProduct = async (req, res, nxt) => {
   console.log("create Product");
   res.redirect("/");
 };
+exports.getAdmin = async (req,res,nxt)=>{
+    const products = await Product.find()
+    res.render('admin/dashboard', {
+        path : req.path,
+        title : "ADMIN",
+        products,
+    })
+}
