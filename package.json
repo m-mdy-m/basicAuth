@@ -1,0 +1,27 @@
+{
+  "name": "basicauth",
+  "version": "1.0.0",
+  "description": "“basicAuth: A Node.js mini-project featuring secure user login, session management, and CSRF protection with MongoDB integration.”",
+  "main": "app.js",
+  "scripts": {
+    "test": "nodemon app.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/m-mdy-m/basicAuth.git"
+  },
+  "keywords": [
+    "express",
+    "nodejs",
+    "csrf",
+    "ejs",
+    "authorization",
+    "mongodb"
+  ],
+  "author": "mahdi",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/m-mdy-m/basicAuth/issues"
+  },
+  "homepage": "https://github.com/m-mdy-m/basicAuth#readme"
+}
