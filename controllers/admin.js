@@ -31,3 +31,11 @@ exports.deleteProduct = async (req,res,nxt)=>{
     console.log('delete product')
     res.redirect('/')
 }
+exports.editProduct = async (req,res,nxt)=>{
+    const id = req.params.prodId
+    const editing = req.quey.edit
+    console.log(id);
+    console.log(editing);
+}
+ 
+
