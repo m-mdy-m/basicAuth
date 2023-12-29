@@ -14,6 +14,7 @@ const store = new connectMongodbSession({
   uri: URL,
   collection: "Sessions",
 });
+
 app.use(
   session({
     secret: "secret",
@@ -22,6 +23,10 @@ app.use(
     store,
   })
 );
+app.use((req,res,nxt)=>{
+    res.locals.isAuth = req.session.isLog
+    nxt()
+})e
 const shopRoute = require("./routes/shop");
 const adminRoute = require("./routes/admin");
 const authRoute = require("./routes/auth");
