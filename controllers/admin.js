@@ -25,3 +25,9 @@ exports.getAdmin = async (req,res,nxt)=>{
         products,
     })
 }
+exports.deleteProduct = async (req,res,nxt)=>{
+    const id = req.params.prodId
+    await Product.findByIdAndDelete(id)
+    console.log('delete product')
+    res.redirect('/')
+}

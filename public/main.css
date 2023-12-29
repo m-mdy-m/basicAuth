@@ -76,6 +76,7 @@ form > * {
     color: red;
     background-color: #072541;
     border-radius: 8px;
+    cursor: pointer;
 }
 .btn:hover{
     background-color: #13426d;
