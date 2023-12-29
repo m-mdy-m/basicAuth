@@ -1,20 +1,19 @@
 <%- include('../includes/base.ejs') %>
-<link rel="stylesheet" href="/home.css">
 </head>
 <%- include('../includes/header.ejs') %>
 
 <main class="main">
     <div class="wrapper">
         <form action="<% if(editing) {%> /edit-product <%}else{ %> /add-product <% } %>">
-            <div class="title-product">
+            <div class="title-product wrapper_inputsBtn">
                 <label for="title">TITLE</label>
                 <input type="text" name="title" value="<% if (editing){%> <% product.title %> <% } %>">
             </div>
-            <div class="price-product">
+            <div class="price-product wrapper_inputsBtn">
                 <label for="price">PRICE</label>
                 <input type="number" name="price" value="<% if (editing){%> <% product.price %> <% } %>">
             </div>
-            <div class="button-product">
+            <div class="button-product wrapper_inputsBtn">
                 <button type="submit" ><% if(editing) {%> UPDATE <%}else {%> ADD-PRODUCT <%} %></button>
             </div>
         </form>
