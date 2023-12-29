@@ -33,9 +33,18 @@ exports.deleteProduct = async (req,res,nxt)=>{
 }
 exports.editProduct = async (req,res,nxt)=>{
     const id = req.params.prodId
-    const editing = req.quey.edit
-    console.log(id);
-    console.log(editing);
+    const editing = req.query.edit
+    try{
+        const product = await Product.findById(id)
+        res.render('admin/add-product',{
+            title:"edit",
+            path:req.path,
+            product,
+            editing
+        })
+    }catch(err){
+
+    }
 }
  
 
