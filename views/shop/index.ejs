@@ -1,14 +1,19 @@
-<!DOCTYPE html>
-<html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title><%= title %></title>
-  </head>
-  <body>
-    <div class="container">
-        <header></header>
-        <main></main>
-    </div>
-  </body>
-</html>
+<%- include('include/base.ejs') %>
+<link rel="stylesheet" href="/home.css">
+</head>
+<%- include('include/header.ejs') %>
+
+<main class="main">
+    <% if (products.length > 0){ %>
+        <% products.forEach(product => { %>
+            <div  class="boxProduct">
+                <h1> <%= product.title %> </h1>
+                <h3> <%= product.price %> </h3>
+            </div>
+        <% }) %>
+    <% }else{ %>
+        <h1 style="color: aliceblue; font-size: 150px;">NO PRODUCTS</h1>
+    <% } %>
+</main>
+<%- include('include/end.ejs') %>
+    
