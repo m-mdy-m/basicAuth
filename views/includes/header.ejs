@@ -11,11 +11,13 @@
           <li class="navigation__items" >
             <a href="/login" class="<%= path === '/login'? 'active':'' %>">login</a>
           </li>
+          <% if(isAuth){ %>
           <li class="navigation__items" >
             <a href="/add-product"  class="<%= path === '/add-product'? 'active':'' %>">add-product</a>
           </li>
           <li class="navigation__items" >
             <a href="/admin"  class="<%= path === '/admin'? 'active':'' %>">admin</a>
           </li>
+          <% } %>
         </nav>
       </header>
