@@ -11,11 +11,11 @@ app.set("views", "views");
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, "public")));
 const URL = "mongodb://localhost:27017/basicAuth";
+const csurfProtection = csurf();
 const store = new connectMongodbSession({
   uri: URL,
   collection: "Sessions",
 });
-const csurfProtection = csurf();
 app.use(
   session({
     secret: "secret",
@@ -27,6 +27,7 @@ app.use(
 app.use(csurfProtection);
 app.use((req, res, nxt) => {
   res.locals.isAuth = req.session.isLog;
+  res.locals.csrfToken = req.csrfToken();
   nxt();
 });
 const shopRoute = require("./routes/shop");
