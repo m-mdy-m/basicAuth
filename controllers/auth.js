@@ -25,3 +25,9 @@ exports.postSignUP = async (req,res,nxt)=>{
     console.log('create user');
     res.redirect('/')
 }
+exports.getLogin = async (req,res,nxt)=>{
+    res.render('auth/login',{
+        title : "LOGIN",
+        path:req.path,
+    })
+}
