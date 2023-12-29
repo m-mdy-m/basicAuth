@@ -5,6 +5,7 @@ const mongoose = require("mongoose");
 const session = require("express-session");
 const connectMongodbSession = require("connect-mongodb-session")(session);
 const path = require("path");
+const csurf = require("csurf");
 app.set("view engine", "ejs");
 app.set("views", "views");
 app.use(bodyParser.urlencoded({ extended: false }));
@@ -14,7 +15,7 @@ const store = new connectMongodbSession({
   uri: URL,
   collection: "Sessions",
 });
-
+const csurfProtection = csurf();
 app.use(
   session({
     secret: "secret",
@@ -23,10 +24,11 @@ app.use(
     store,
   })
 );
-app.use((req,res,nxt)=>{
-    res.locals.isAuth = req.session.isLog
-    nxt()
-})
+app.use(csurfProtection);
+app.use((req, res, nxt) => {
+  res.locals.isAuth = req.session.isLog;
+  nxt();
+});
 const shopRoute = require("./routes/shop");
 const adminRoute = require("./routes/admin");
 const authRoute = require("./routes/auth");
