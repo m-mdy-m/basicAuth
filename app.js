@@ -27,7 +27,7 @@ app.use(
 app.use(csurfProtection);
 app.use((req, res, nxt) => {
   res.locals.isAuth = req.session.isLog;
-  res.locals.csurfToken = req.csrfToken();
+  res.locals.csrfToken = req.csrfToken();
   nxt();
 });
 const shopRoute = require("./routes/shop");
