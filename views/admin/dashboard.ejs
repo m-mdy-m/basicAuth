@@ -9,8 +9,8 @@
                 <h1 class="card-title card-product"> <%= product.title  %> </h1>
                 <h2 class="card-pric card-product"> <%=  product.price %> </h2>
                 <div>
-                    <a href="/edit-product/:prodId" class="btn">EDIT</a>
-                    <form action="/add-product/:prodId">
+                    <a href="/edit-product/<% product._id %>?edit=true" class="btn">EDIT</a>
+                    <form action="/admin/<% product._id %>">
                         <button type="submit" class="btn">DELETE</button>
                     </form>
                 </div>
