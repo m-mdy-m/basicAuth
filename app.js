@@ -8,6 +8,8 @@ app.set('views', 'views')
 app.use(bodyParser.urlencoded({extended : false}))
 app.use(express.static(path.join(__dirname , 'public')))
 const URL = "mongodb://localhost:27017/basicAuth"
+const shopRoute = require('./routes/shop')
+app.use(shopRoute)
 
 const start = async ()=>{
     try {
