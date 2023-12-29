@@ -25,9 +25,28 @@ exports.postSignUP = async (req,res,nxt)=>{
     console.log('create user');
     res.redirect('/')
 }
-exports.getLogin = async (req,res,nxt)=>{
+exports.getLogin =(req,res,nxt)=>{
     res.render('auth/login',{
         title : "LOGIN",
         path:req.path,
     })
+}
+
+exports.postLogin = async (req,res,nxt)=>{
+    const name = req.body.name
+    const email = req.body.email
+    const pass = req.body.password
+    const user = await User.findOne({email})
+    if(!user){
+        res.redirect('/signup')
+    }
+    const mathPass = await bcryptjs.compare(pass,user.password)
+
+    if(!mathPass){
+        return res.redirect('/login')
+    }
+        req.session.isLog = true
+        req.session.user = user
+        req.session.save()
+        return res.redirect('/')
 }
