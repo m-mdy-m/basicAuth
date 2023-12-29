@@ -4,7 +4,7 @@
 
 <main class="main">
     <div class="wrapper">
-        <form action="<% if(editing) {%> /edit-product <%}else{ %> /add-product <% } %>">
+        <form action="<% if(editing) {%> /edit-product <%}else{ %> /add-product <% } %>" method="POST">
             <div class="title-product wrapper_inputsBtn">
                 <label for="title">TITLE</label>
                 <input type="text" name="title" value="<% if (editing){%> <% product.title %> <% } %>">

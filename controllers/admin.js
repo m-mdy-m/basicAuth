@@ -9,12 +9,13 @@ exports.getAddProduct = (req,res,nxt)=>{
 exports.postProduct = async (req,res,nxt)=>{
     const title = req.body.title
     const price = req.body.price
-
+    console.log('title =>', title);
+    console.log('price =>', price);
     const newP = await Product.create(
         title,
         price
     )
     await newP.save()
     console.log("create Product")
-    return res.redirect('/')
+    res.redirect('/')
 }
