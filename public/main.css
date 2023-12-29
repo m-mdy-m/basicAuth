@@ -52,7 +52,7 @@ form > * {
     background-color: rgba(28, 189, 114, 0.74);
     border-radius: 12px;
     box-shadow: 5px -4px 1px 0px #b4121298;
-    margin: 0 4px;
+    margin: 0 12px;
     display: flex;
     justify-content: center;
     align-items: center;
