@@ -9,8 +9,9 @@ app.use(bodyParser.urlencoded({extended : false}))
 app.use(express.static(path.join(__dirname , 'public')))
 const URL = "mongodb://localhost:27017/basicAuth"
 const shopRoute = require('./routes/shop')
+const adminRoute = require('./routes/admin')
 app.use(shopRoute)
-
+app.use(adminRoute)
 const start = async ()=>{
     try {
         await mongoose.connect(URL)
