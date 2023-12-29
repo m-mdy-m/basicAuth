@@ -10,6 +10,8 @@ app.use(express.static(path.join(__dirname , 'public')))
 const URL = "mongodb://localhost:27017/basicAuth"
 const shopRoute = require('./routes/shop')
 const adminRoute = require('./routes/admin')
+const authRoute = require('./routes/auth')
+app.use(authRoute)
 app.use(shopRoute)
 app.use(adminRoute)
 const start = async ()=>{
